@@ -1,0 +1,51 @@
+# Archivos y carpetas de Visual Studio
+.vs/
+bin/
+obj/
+
+# Paquetes NuGet
+*.nupkg
+*.snupkg
+
+# Archivos de configuración del proyecto
+project.lock.json
+
+# Archivos de compilación
+*.csproj
+*.csproj.user
+*.suo
+*.user
+*.cache
+*.userprefs
+
+# Archivos de prueba
+[Tt]est[Rs]result*/
+*.testsettings
+
+# Archivos temporales de Visual Studio
+*.tmp
+*.tmp.cs
+*.tmp.py
+*.scc
+*.csproj.cache
+*.user
+*.userprefs
+
+# Archivos temporales de compilación
+*.compiled.cs
+*.compiled.js
+
+# Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# JetBrains Rider
+.idea/
+
+# Visual Studio Code
+.vscode/
