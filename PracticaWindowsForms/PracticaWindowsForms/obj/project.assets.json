@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alu\\source\\repos\\PracticaWindowsForms\\PracticaWindowsForms\\PracticaWindowsForms.csproj",
-      "projectName": "PracticaWindowsForms",
-      "projectPath": "C:\\Users\\alu\\source\\repos\\PracticaWindowsForms\\PracticaWindowsForms\\PracticaWindowsForms.csproj",
+      "projectUniqueName": "C:\\Users\\alu\\source\\repos\\PracticaWindowsForms\\PracticaWindowsForms\\PracticaAdivinarNumero.csproj",
+      "projectName": "PracticaAdivinarNumero",
+      "projectPath": "C:\\Users\\alu\\source\\repos\\PracticaWindowsForms\\PracticaWindowsForms\\PracticaAdivinarNumero.csproj",
       "packagesPath": "C:\\Users\\alu\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\alu\\source\\repos\\PracticaWindowsForms\\PracticaWindowsForms\\obj\\",
       "projectStyle": "PackageReference",
