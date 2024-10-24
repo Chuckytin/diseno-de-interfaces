@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PracticaAdivinarNumero", "PracticaWindowsForms\PracticaAdivinarNumero.csproj", "{B5617D89-18FC-4AFA-91D2-1A2B7B3630A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculadora", "Calculadora\Calculadora.csproj", "{C5892DB8-64B2-4809-B6B0-0F05AA5CB553}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B5617D89-18FC-4AFA-91D2-1A2B7B3630A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5617D89-18FC-4AFA-91D2-1A2B7B3630A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5617D89-18FC-4AFA-91D2-1A2B7B3630A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5892DB8-64B2-4809-B6B0-0F05AA5CB553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5892DB8-64B2-4809-B6B0-0F05AA5CB553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5892DB8-64B2-4809-B6B0-0F05AA5CB553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5892DB8-64B2-4809-B6B0-0F05AA5CB553}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
