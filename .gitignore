@@ -1,0 +1,134 @@
+# Archivos de usuario y configuración
+*.suo
+*.user
+*.sln.docstates
+
+# Resultados de compilación
+[Dd]ebug/
+[Rr]elease/
+x64/
+
+# Archivos binarios
+[Bb]in/
+[Oo]bj/
+
+# Archivos de caché
+*.cache
+Thumbs.db
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Archivos de nuget
+*.nupkg
+**/packages/*
+
+# Archivos de prueba MSTest
+[Test]*
+[Tt]est*
+
+# Archivos de log
+*.log
+
+# Archivos de proyecto
+*.csproj
+*.vbproj
+
+# Archivos de solución
+*.sln
+
+# Archivos de estado de recompilación
+*_ReSharper.*
+*.rsuser
+*.sln.reSharper
+
+# Archivos de estado de TeamCity
+_teamcity*
+
+# Archivos de cobertura de código
+*.coverlet.xml
+*.coverageresults.json
+
+# Archivos de perfil de rendimiento
+*.psess
+*.vspscc
+
+# Archivos de proyecto de Visual Studio
+*.vcxproj
+*.vcxproj.filters
+
+# Archivos de estado de compilación
+*.user
+*.useros
+*.csproj.user
+*.vbproj.user
+
+# Archivos de estado de solución
+*.sln.docstates
+
+# Archivos de estado de solución de Visual Studio
+*.suo
+
+# Archivos de caché de Visual Studio
+*.ncb
+*.cache
+*.sccsid
+*.sccspv
+
+# Archivos temporales de Visual Studio
+*.tmp
+*.temp
+
+# Archivos de estado de solución de ReSharper
+*_ReSharper.*
+*.rsuser
+*.sln.reSharper
+
+# Archivos de estado de TeamCity
+_teamcity*
+
+# Archivos de cobertura de código
+*.coverlet.xml
+*.coverageresults.json
+
+# Archivos de perfil de rendimiento
+*.psess
+*.vspscc
+
+# Archivos de proyecto de Visual Studio
+*.vcxproj
+*.vcxproj.filters
+
+# Archivos de estado de compilación
+*.user
+*.useros
+*.csproj.user
+*.vbproj.user
+
+# Archivos de estado de solución
+*.sln.docstates
+
+# Archivos de estado de solución de Visual Studio
+*.suo
+
+# Archivos de caché de Visual Studio
+*.ncb
+*.cache
+*.sccsid
+*.sccspv
+
+# Archivos temporales de Visual Studio
+*.tmp
+*.temp
+
+# Archivos de estado de solución de ReSharper
+*_ReSharper.*
+*.rsuser
+*.sln.reSharper
+
+# Archivos de estado de TeamCity
+_teamcity*
+
+# Visual Studio files
+*.vs/
