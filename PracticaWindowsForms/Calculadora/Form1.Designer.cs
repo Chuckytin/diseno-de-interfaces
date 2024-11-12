@@ -2,15 +2,9 @@
 {
     partial class Form1
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
+
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -51,6 +45,7 @@
             btn_multiplicar = new Button();
             btn_dividir = new Button();
             textBox1 = new TextBox();
+            lbl_op = new Label();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
@@ -76,7 +71,7 @@
             tableLayoutPanel1.Controls.Add(button3, 2, 0);
             tableLayoutPanel1.Controls.Add(btn_ce, 1, 0);
             tableLayoutPanel1.Controls.Add(btn_c, 0, 0);
-            tableLayoutPanel1.Location = new Point(37, 92);
+            tableLayoutPanel1.Location = new Point(37, 98);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 5;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
@@ -86,13 +81,14 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.Size = new Size(200, 324);
             tableLayoutPanel1.TabIndex = 0;
-            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
             // btn_mas_menos
             // 
             btn_mas_menos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btn_mas_menos.BackColor = SystemColors.ActiveBorder;
-            btn_mas_menos.FlatAppearance.BorderColor = Color.White;
+            btn_mas_menos.FlatAppearance.BorderColor = Color.Black;
+            btn_mas_menos.FlatAppearance.BorderSize = 2;
+            btn_mas_menos.FlatStyle = FlatStyle.Flat;
             btn_mas_menos.Font = new Font("Microsoft Sans Serif", 15.75F);
             btn_mas_menos.Location = new Point(138, 262);
             btn_mas_menos.Margin = new Padding(6);
@@ -101,13 +97,15 @@
             btn_mas_menos.TabIndex = 14;
             btn_mas_menos.Text = "+/-";
             btn_mas_menos.UseVisualStyleBackColor = false;
-            btn_mas_menos.Click += button15_Click;
+            btn_mas_menos.Click += btn_mas_menos_Click;
             // 
             // btn_coma
             // 
             btn_coma.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btn_coma.BackColor = SystemColors.ActiveBorder;
-            btn_coma.FlatAppearance.BorderColor = Color.White;
+            btn_coma.FlatAppearance.BorderColor = Color.Black;
+            btn_coma.FlatAppearance.BorderSize = 2;
+            btn_coma.FlatStyle = FlatStyle.Flat;
             btn_coma.Font = new Font("Microsoft Sans Serif", 15.75F);
             btn_coma.Location = new Point(72, 262);
             btn_coma.Margin = new Padding(6);
@@ -116,13 +114,15 @@
             btn_coma.TabIndex = 13;
             btn_coma.Text = ",";
             btn_coma.UseVisualStyleBackColor = false;
-            btn_coma.Click += button14_Click;
+            btn_coma.Click += btn_coma_Click;
             // 
             // btn_cero
             // 
             btn_cero.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btn_cero.BackColor = SystemColors.ActiveBorder;
-            btn_cero.FlatAppearance.BorderColor = Color.White;
+            btn_cero.FlatAppearance.BorderColor = Color.Black;
+            btn_cero.FlatAppearance.BorderSize = 2;
+            btn_cero.FlatStyle = FlatStyle.Flat;
             btn_cero.Font = new Font("Microsoft Sans Serif", 15.75F);
             btn_cero.Location = new Point(6, 262);
             btn_cero.Margin = new Padding(6);
@@ -137,7 +137,9 @@
             // 
             btn_tres.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btn_tres.BackColor = SystemColors.ActiveBorder;
-            btn_tres.FlatAppearance.BorderColor = Color.White;
+            btn_tres.FlatAppearance.BorderColor = Color.Black;
+            btn_tres.FlatAppearance.BorderSize = 2;
+            btn_tres.FlatStyle = FlatStyle.Flat;
             btn_tres.Font = new Font("Microsoft Sans Serif", 15.75F);
             btn_tres.Location = new Point(138, 198);
             btn_tres.Margin = new Padding(6);
@@ -152,7 +154,9 @@
             // 
             btn_dos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btn_dos.BackColor = SystemColors.ActiveBorder;
-            btn_dos.FlatAppearance.BorderColor = Color.White;
+            btn_dos.FlatAppearance.BorderColor = Color.Black;
+            btn_dos.FlatAppearance.BorderSize = 2;
+            btn_dos.FlatStyle = FlatStyle.Flat;
             btn_dos.Font = new Font("Microsoft Sans Serif", 15.75F);
             btn_dos.Location = new Point(72, 198);
             btn_dos.Margin = new Padding(6);
@@ -167,7 +171,9 @@
             // 
             btn_uno.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btn_uno.BackColor = SystemColors.ActiveBorder;
-            btn_uno.FlatAppearance.BorderColor = Color.White;
+            btn_uno.FlatAppearance.BorderColor = Color.Black;
+            btn_uno.FlatAppearance.BorderSize = 2;
+            btn_uno.FlatStyle = FlatStyle.Flat;
             btn_uno.Font = new Font("Microsoft Sans Serif", 15.75F);
             btn_uno.Location = new Point(6, 198);
             btn_uno.Margin = new Padding(6);
@@ -182,7 +188,9 @@
             // 
             btn_seis.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btn_seis.BackColor = SystemColors.ActiveBorder;
-            btn_seis.FlatAppearance.BorderColor = Color.White;
+            btn_seis.FlatAppearance.BorderColor = Color.Black;
+            btn_seis.FlatAppearance.BorderSize = 2;
+            btn_seis.FlatStyle = FlatStyle.Flat;
             btn_seis.Font = new Font("Microsoft Sans Serif", 15.75F);
             btn_seis.Location = new Point(138, 134);
             btn_seis.Margin = new Padding(6);
@@ -197,7 +205,9 @@
             // 
             btn_cinco.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btn_cinco.BackColor = SystemColors.ActiveBorder;
-            btn_cinco.FlatAppearance.BorderColor = Color.White;
+            btn_cinco.FlatAppearance.BorderColor = Color.Black;
+            btn_cinco.FlatAppearance.BorderSize = 2;
+            btn_cinco.FlatStyle = FlatStyle.Flat;
             btn_cinco.Font = new Font("Microsoft Sans Serif", 15.75F);
             btn_cinco.Location = new Point(72, 134);
             btn_cinco.Margin = new Padding(6);
@@ -212,7 +222,9 @@
             // 
             btn_cuatro.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btn_cuatro.BackColor = SystemColors.ActiveBorder;
-            btn_cuatro.FlatAppearance.BorderColor = Color.White;
+            btn_cuatro.FlatAppearance.BorderColor = Color.Black;
+            btn_cuatro.FlatAppearance.BorderSize = 2;
+            btn_cuatro.FlatStyle = FlatStyle.Flat;
             btn_cuatro.Font = new Font("Microsoft Sans Serif", 15.75F);
             btn_cuatro.Location = new Point(6, 134);
             btn_cuatro.Margin = new Padding(6);
@@ -227,7 +239,9 @@
             // 
             btn_nueve.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btn_nueve.BackColor = SystemColors.ActiveBorder;
-            btn_nueve.FlatAppearance.BorderColor = Color.White;
+            btn_nueve.FlatAppearance.BorderColor = Color.Black;
+            btn_nueve.FlatAppearance.BorderSize = 2;
+            btn_nueve.FlatStyle = FlatStyle.Flat;
             btn_nueve.Font = new Font("Microsoft Sans Serif", 15.75F);
             btn_nueve.Location = new Point(138, 70);
             btn_nueve.Margin = new Padding(6);
@@ -242,7 +256,9 @@
             // 
             btn_ocho.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btn_ocho.BackColor = SystemColors.ActiveBorder;
-            btn_ocho.FlatAppearance.BorderColor = Color.White;
+            btn_ocho.FlatAppearance.BorderColor = Color.Black;
+            btn_ocho.FlatAppearance.BorderSize = 2;
+            btn_ocho.FlatStyle = FlatStyle.Flat;
             btn_ocho.Font = new Font("Microsoft Sans Serif", 15.75F);
             btn_ocho.Location = new Point(72, 70);
             btn_ocho.Margin = new Padding(6);
@@ -257,7 +273,9 @@
             // 
             btn_siete.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btn_siete.BackColor = SystemColors.ActiveBorder;
-            btn_siete.FlatAppearance.BorderColor = Color.White;
+            btn_siete.FlatAppearance.BorderColor = Color.Black;
+            btn_siete.FlatAppearance.BorderSize = 2;
+            btn_siete.FlatStyle = FlatStyle.Flat;
             btn_siete.Font = new Font("Microsoft Sans Serif", 15.75F);
             btn_siete.Location = new Point(6, 70);
             btn_siete.Margin = new Padding(6);
@@ -272,7 +290,9 @@
             // 
             button3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             button3.BackColor = SystemColors.ActiveBorder;
-            button3.FlatAppearance.BorderColor = Color.White;
+            button3.FlatAppearance.BorderColor = Color.Black;
+            button3.FlatAppearance.BorderSize = 2;
+            button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Microsoft Sans Serif", 15.75F);
             button3.Location = new Point(138, 6);
             button3.Margin = new Padding(6);
@@ -287,7 +307,9 @@
             // 
             btn_ce.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btn_ce.BackColor = SystemColors.ActiveBorder;
-            btn_ce.FlatAppearance.BorderColor = Color.White;
+            btn_ce.FlatAppearance.BorderColor = Color.Black;
+            btn_ce.FlatAppearance.BorderSize = 2;
+            btn_ce.FlatStyle = FlatStyle.Flat;
             btn_ce.Font = new Font("Microsoft Sans Serif", 15.75F);
             btn_ce.Location = new Point(72, 6);
             btn_ce.Margin = new Padding(6);
@@ -296,21 +318,25 @@
             btn_ce.TabIndex = 1;
             btn_ce.Text = "CE";
             btn_ce.UseVisualStyleBackColor = false;
+            btn_ce.Click += btn_ce_Click;
             // 
             // btn_c
             // 
             btn_c.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btn_c.BackColor = SystemColors.ActiveBorder;
-            btn_c.FlatAppearance.BorderColor = Color.White;
+            btn_c.FlatAppearance.BorderColor = Color.Black;
+            btn_c.FlatAppearance.BorderSize = 2;
+            btn_c.FlatStyle = FlatStyle.Flat;
             btn_c.Font = new Font("Microsoft Sans Serif", 15.75F);
             btn_c.Location = new Point(6, 6);
             btn_c.Margin = new Padding(6);
             btn_c.Name = "btn_c";
             btn_c.Size = new Size(54, 52);
             btn_c.TabIndex = 0;
+            btn_c.Tag = "btn_c_click";
             btn_c.Text = "C";
             btn_c.UseVisualStyleBackColor = false;
-            btn_c.Click += button1_Click;
+            btn_c.Click += btn_c_Click_1;
             // 
             // tableLayoutPanel2
             // 
@@ -321,7 +347,7 @@
             tableLayoutPanel2.Controls.Add(btn_menos, 0, 2);
             tableLayoutPanel2.Controls.Add(btn_multiplicar, 0, 1);
             tableLayoutPanel2.Controls.Add(btn_dividir, 0, 0);
-            tableLayoutPanel2.Location = new Point(268, 92);
+            tableLayoutPanel2.Location = new Point(268, 98);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 5;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
@@ -336,28 +362,34 @@
             // 
             btn_igual.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btn_igual.BackColor = SystemColors.ActiveBorder;
-            btn_igual.FlatAppearance.BorderColor = Color.White;
+            btn_igual.FlatAppearance.BorderColor = Color.Black;
+            btn_igual.FlatAppearance.BorderSize = 2;
+            btn_igual.FlatStyle = FlatStyle.Flat;
             btn_igual.Font = new Font("Microsoft Sans Serif", 15.75F);
             btn_igual.Location = new Point(6, 262);
             btn_igual.Margin = new Padding(6);
             btn_igual.Name = "btn_igual";
             btn_igual.Size = new Size(53, 56);
             btn_igual.TabIndex = 5;
+            btn_igual.Tag = "btn_igual_click";
             btn_igual.Text = "=";
             btn_igual.UseVisualStyleBackColor = false;
-            btn_igual.Click += button20_Click;
+            btn_igual.Click += btn_igual_Click_1;
             // 
             // btn_mas
             // 
             btn_mas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btn_mas.BackColor = SystemColors.ActiveBorder;
-            btn_mas.FlatAppearance.BorderColor = Color.White;
+            btn_mas.FlatAppearance.BorderColor = Color.Black;
+            btn_mas.FlatAppearance.BorderSize = 2;
+            btn_mas.FlatStyle = FlatStyle.Flat;
             btn_mas.Font = new Font("Microsoft Sans Serif", 15.75F);
             btn_mas.Location = new Point(6, 198);
             btn_mas.Margin = new Padding(6);
             btn_mas.Name = "btn_mas";
             btn_mas.Size = new Size(53, 52);
             btn_mas.TabIndex = 4;
+            btn_mas.Tag = "1";
             btn_mas.Text = "+";
             btn_mas.UseVisualStyleBackColor = false;
             // 
@@ -365,27 +397,34 @@
             // 
             btn_menos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btn_menos.BackColor = SystemColors.ActiveBorder;
-            btn_menos.FlatAppearance.BorderColor = Color.White;
+            btn_menos.FlatAppearance.BorderColor = Color.Black;
+            btn_menos.FlatAppearance.BorderSize = 2;
+            btn_menos.FlatStyle = FlatStyle.Flat;
             btn_menos.Font = new Font("Microsoft Sans Serif", 15.75F);
             btn_menos.Location = new Point(6, 134);
             btn_menos.Margin = new Padding(6);
             btn_menos.Name = "btn_menos";
             btn_menos.Size = new Size(53, 52);
             btn_menos.TabIndex = 3;
+            btn_menos.Tag = "2";
             btn_menos.Text = "-";
             btn_menos.UseVisualStyleBackColor = false;
+            btn_menos.Click += btn_menos_Click;
             // 
             // btn_multiplicar
             // 
             btn_multiplicar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btn_multiplicar.BackColor = SystemColors.ActiveBorder;
-            btn_multiplicar.FlatAppearance.BorderColor = Color.White;
+            btn_multiplicar.FlatAppearance.BorderColor = Color.Black;
+            btn_multiplicar.FlatAppearance.BorderSize = 2;
+            btn_multiplicar.FlatStyle = FlatStyle.Flat;
             btn_multiplicar.Font = new Font("Microsoft Sans Serif", 15.75F);
             btn_multiplicar.Location = new Point(6, 70);
             btn_multiplicar.Margin = new Padding(6);
             btn_multiplicar.Name = "btn_multiplicar";
             btn_multiplicar.Size = new Size(53, 52);
             btn_multiplicar.TabIndex = 2;
+            btn_multiplicar.Tag = "3";
             btn_multiplicar.Text = "x";
             btn_multiplicar.UseVisualStyleBackColor = false;
             // 
@@ -393,15 +432,19 @@
             // 
             btn_dividir.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btn_dividir.BackColor = SystemColors.ActiveBorder;
-            btn_dividir.FlatAppearance.BorderColor = Color.White;
+            btn_dividir.FlatAppearance.BorderColor = Color.Black;
+            btn_dividir.FlatAppearance.BorderSize = 2;
+            btn_dividir.FlatStyle = FlatStyle.Flat;
             btn_dividir.Font = new Font("Microsoft Sans Serif", 15.75F);
             btn_dividir.Location = new Point(6, 6);
             btn_dividir.Margin = new Padding(6);
             btn_dividir.Name = "btn_dividir";
             btn_dividir.Size = new Size(53, 52);
             btn_dividir.TabIndex = 1;
+            btn_dividir.Tag = "4";
             btn_dividir.Text = "/";
             btn_dividir.UseVisualStyleBackColor = false;
+            btn_dividir.Click += btn_dividir_Click;
             // 
             // textBox1
             // 
@@ -412,7 +455,16 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(296, 37);
             textBox1.TabIndex = 2;
-            textBox1.TextChanged += textBox1_TextChanged;
+            // 
+            // lbl_op
+            // 
+            lbl_op.AutoSize = true;
+            lbl_op.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_op.Location = new Point(281, 69);
+            lbl_op.Name = "lbl_op";
+            lbl_op.Size = new Size(46, 18);
+            lbl_op.TabIndex = 3;
+            lbl_op.Text = "label1";
             // 
             // Form1
             // 
@@ -420,6 +472,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GrayText;
             ClientSize = new Size(359, 450);
+            Controls.Add(lbl_op);
             Controls.Add(textBox1);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel1);
@@ -456,5 +509,6 @@
         private Button btn_igual;
         private Button btn_mas;
         private TextBox textBox1;
+        private Label lbl_op;
     }
 }

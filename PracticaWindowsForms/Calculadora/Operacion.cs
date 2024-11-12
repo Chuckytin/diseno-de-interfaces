@@ -11,11 +11,11 @@ namespace Calculadora
 
         public double resultado;
 
-        private double num1;
-        private double num2;
-        private string display;
+        public double num1;
+        public double num2;
+        public string display;
 
-        public Operacion(double num1, double num2)
+        public Operacion (double num1, double num2)
         {
             this.num1 = num1;
             this.num2 = num2;
@@ -24,6 +24,14 @@ namespace Calculadora
         {
             this.resultado = resultado;
             this.display = display;
+        }
+
+        //Registra la operación pulsada
+        //1 (suma) 2 (resta) 3 (multiplicación) 4 (divisón)
+        public int regOperacion 
+        {
+            get { return regOperacion; }
+            set { regOperacion = value; }
         }
 
         public void OpSuma(double num1, double num2)
@@ -46,5 +54,12 @@ namespace Calculadora
             resultado = num1 / num2;
         }
 
+        public void opClean()
+        {
+            num1 = 0;
+            num2 = 0;
+            resultado = 0;
+            display = "";
+        }
     }
 }
