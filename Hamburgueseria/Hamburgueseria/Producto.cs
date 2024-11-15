@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace Hamburgueseria
 {
-    internal abstract class Producto
+    //Clase abstracta Producto
+    abstract class Producto
     {
+        public string nombreProducto { get; set; }
         public double precioProducto { get; set; }
 
+        public abstract double CalcularPrecio();
+        public abstract string VerDetalles();
     }
 }

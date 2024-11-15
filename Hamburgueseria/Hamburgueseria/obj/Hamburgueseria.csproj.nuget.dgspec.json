@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alu\\source\\repos\\Hamburgueseria\\Hamburgueseria\\Hamburgueseria.csproj": {}
+    "F:\\chuck\\workspace-visualstudio\\Colegio\\Hamburgueseria\\Hamburgueseria\\Hamburgueseria.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alu\\source\\repos\\Hamburgueseria\\Hamburgueseria\\Hamburgueseria.csproj": {
+    "F:\\chuck\\workspace-visualstudio\\Colegio\\Hamburgueseria\\Hamburgueseria\\Hamburgueseria.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alu\\source\\repos\\Hamburgueseria\\Hamburgueseria\\Hamburgueseria.csproj",
+        "projectUniqueName": "F:\\chuck\\workspace-visualstudio\\Colegio\\Hamburgueseria\\Hamburgueseria\\Hamburgueseria.csproj",
         "projectName": "Hamburgueseria",
-        "projectPath": "C:\\Users\\alu\\source\\repos\\Hamburgueseria\\Hamburgueseria\\Hamburgueseria.csproj",
-        "packagesPath": "C:\\Users\\alu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alu\\source\\repos\\Hamburgueseria\\Hamburgueseria\\obj\\",
+        "projectPath": "F:\\chuck\\workspace-visualstudio\\Colegio\\Hamburgueseria\\Hamburgueseria\\Hamburgueseria.csproj",
+        "packagesPath": "C:\\Users\\chuck\\.nuget\\packages\\",
+        "outputPath": "F:\\chuck\\workspace-visualstudio\\Colegio\\Hamburgueseria\\Hamburgueseria\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\alu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\chuck\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

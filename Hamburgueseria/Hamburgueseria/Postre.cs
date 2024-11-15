@@ -1,82 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
-using System.Transactions;
 
 namespace Hamburgueseria
 {
-    internal class Postre : Producto
+    //Clase Postre
+    class Postre : Producto
     {
-        public double precioBase = 1.0d;
-        
+        public string tipoPostre { get; set; }
+
         public Postre()
-        { 
-            this.precioProducto = precioBase;
-        }
-
-        public override string ToString() 
         {
-            return "Precio: " + this.precioProducto + ((precioProducto == 1) ? " euro" : " euros");
+            nombreProducto = "Postre";
+            tipoPostre = ElegirPostre();
+            precioProducto = CalcularPrecio();
         }
 
-    }
-
-    internal class Helado : Postre
-    {
-        public char tamanioHelado;
-
-        public const double SUPLEMENTO_MEDIANO = 1.50d;
-        public const double SUPLEMENTO_GRANDE = 2.0d;
-
-        public Helado() : base()
+        //método para elegir el postre
+        public string ElegirPostre()
         {
-            this.tamanioHelado = EleccionTamanio();
-            TamanioPrecio();
+            Console.WriteLine("Elige un postre: Helado o Manzana");
+            tipoPostre = Console.ReadLine().ToUpper();
 
-        }
-
-        private char EleccionTamanio() {
-
-            Console.WriteLine("Tamaños del Helado: S, M, L");
-            char eleccion = Convert.ToChar(Console.ReadLine().ToUpper());
-
-            if (eleccion == Tamanios.TAMANIO_PEQUENIO || 
-                eleccion == Tamanios.TAMANIO_MEDIANO || 
-                eleccion == Tamanios.TAMANIO_GRANDE) 
+            //validar si el postre elegido es correcto
+            if (tipoPostre != "HELADO" && tipoPostre != "MANZANA")
             {
-                return eleccion;
-            }
-            else
-            {
-                return Tamanios.TAMANIO_MEDIANO; //por defecto
+                Console.WriteLine("Postre no válido, se seleccionará Manzana por defecto.");
+                tipoPostre = "MANZANA"; //si no es válido, se selecciona "Manzana" por defecto
             }
 
+            return tipoPostre;
         }
 
-        private void TamanioPrecio()
+        //método para calcular el precio del postre
+        public override double CalcularPrecio()
         {
-            if (tamanioHelado == Tamanios.TAMANIO_MEDIANO) { this.precioProducto *= SUPLEMENTO_MEDIANO; }
-
-            if (tamanioHelado == Tamanios.TAMANIO_GRANDE) { this.precioProducto *= SUPLEMENTO_GRANDE; }
+            return tipoPostre == "HELADO" ? 3.0 : 1.0; //3.0€ por Helado y 1.0€ por Manzana
         }
 
-        public override string ToString()
-        { 
-            return "Helado " + base.ToString() + ", Tamaño: " + tamanioHelado;
-        }
-    }
-    
-    internal class Manzana : Postre 
-    {
-        public Manzana() { }
-
-        public override string ToString()
+        //método para ver los detalles del postre
+        public override string VerDetalles()
         {
-            return "Manzana " + base.ToString();
+            return $"{tipoPostre} - Precio: {CalcularPrecio()} euros.";
         }
-
     }
 }
