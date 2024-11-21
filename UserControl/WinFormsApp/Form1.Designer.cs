@@ -28,18 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            cbComunidadAutonomaes1 = new CBComunidadAutonomaES();
             SuspendLayout();
+            // 
+            // cbComunidadAutonomaes1
+            // 
+            cbComunidadAutonomaes1.Location = new Point(13, 50);
+            cbComunidadAutonomaes1.Margin = new Padding(4, 3, 4, 3);
+            cbComunidadAutonomaes1.Name = "cbComunidadAutonomaes1";
+            cbComunidadAutonomaes1.Size = new Size(588, 74);
+            cbComunidadAutonomaes1.TabIndex = 0;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(557, 450);
+            ClientSize = new Size(620, 450);
+            Controls.Add(cbComunidadAutonomaes1);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private CBComunidadAutonomaES cbComunidadAutonomaes1;
     }
 }
