@@ -1,0 +1,21 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="530">
+    <Grid MinWidth="100">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="43*"/>
+        </Grid.RowDefinitions>
+        <Button Content="PIEDRA" HorizontalAlignment="Left" Margin="105,50,0,0" AutomationProperties.Name="btn_piedra" MinWidth="75" MinHeight="35" Click="Button_Click" Grid.Row="1" Height="35" Width="75" VerticalAlignment="Center"/>
+        <Button Content="PAPEL" HorizontalAlignment="Left" Margin="230,50,0,0" AutomationProperties.Name="btn_papel" MinWidth="75" MinHeight="35" Click="Button_Click_1" Grid.Row="1" Height="35" Width="75" VerticalAlignment="Center"/>
+        <Button Content="TIJERA" HorizontalAlignment="Left" Margin="355,50,0,0" AutomationProperties.Name="btn_tijera" MinWidth="75" MinHeight="35" Click="Button_Click_2" Grid.Row="1" Height="35" Width="75" VerticalAlignment="Center"/>
+        <Label x:Name="lbl_resultado" Content="RESULTADO" HorizontalAlignment="Left" VerticalAlignment="Top" AutomationProperties.Name="lbl_resultado" Grid.Row="1" FontFamily="Arial Black" Height="24" Width="90" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,100,0,0"/>
+        <Label x:Name="lbl_opcion_maquina" Content="OPCIÓN DE LA MÁQUINA" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" AutomationProperties.Name="lbl_opcion_maquina" FontFamily="Arial Black" Height="24" Grid.Row="1" Width="174"/>
+
+    </Grid>
+</Window>

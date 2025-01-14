@@ -1,0 +1,26 @@
+﻿<Window x:Class="TimerVsDispatcher_Ex2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TimerVsDispatcher_Ex2"
+        mc:Ignorable="d"
+        Title="Prueba de Timers" Height="200" Width="400">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Label x:Name="DispatcherLabel" Content="Contador Dispatcher: 0 ms" 
+               FontSize="16" Margin="0,0,0,10" Background="#FFD88282"/>
+        <Label x:Name="SystemTimerLabel" Content="Contador System Timer: 0 ms" 
+        FontSize="16" Background="#FFC8FBC4"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" 
+                    Margin="0,10,0,0">
+            <Button Content="Start" Width="80" Margin="5" Click="StartTimers_Click"/>
+            <Button Content="Stop" Width="80" Margin="5" Click="StopTimers_Click" />
+            <Button Content="Reset" Width="80" Margin="5" Click="ResetTimers_Click" />
+        </StackPanel>
+
+
+
+
+    </StackPanel>
+
+</Window>
