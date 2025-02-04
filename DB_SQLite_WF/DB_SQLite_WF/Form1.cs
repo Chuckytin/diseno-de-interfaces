@@ -75,5 +75,35 @@ namespace DB_SQLite_WF
                 MessageBox.Show($"Error general: {ex.Message}");
             }
         }
+
+        /*
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string db = "database_ex1.db";
+            string direccion = $"Data Source = C:\\Users\\alu\\SQLite_DB\\{db}";
+
+            SQLiteConnection conn = new SQLiteConnection(direccion);
+
+            string query = "SELECT * FROM SampleTable";
+
+            SQLiteCommand cmd = new SQLiteCommand(query, conn);
+
+            //para llenar el datatable
+            DataTable dt = new DataTable();
+
+            //Adapter
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd); //recibe el command
+            adapter.Fill(dt); //recibe el datatable
+
+            //Enlace datable al Data Grid View
+            dataGridView1.DataSource = dt;
+
+
+        }
+
+        */
+
     }
+
+
 }
