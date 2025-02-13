@@ -98,7 +98,6 @@ namespace DB_SQLite_WF
             //Enlace datable al Data Grid View
             dataGridView1.DataSource = dt;
 
-
         }
 
         */
