@@ -129,7 +129,7 @@ namespace DB_FireBase
 
                 if (response.Body == "null" || string.IsNullOrEmpty(response.Body))
                 {
-                    MessageBox.Show("Error: No se encontró el contador.");
+                    //MessageBox.Show("Error: No se encontró el contador.");
                     return;
                 }
 

@@ -20,86 +20,114 @@ namespace _20250218_HamVecino_DI_Angel_Torcal
             pedidosGuardados = new ObservableCollection<Pedido>();
         }
 
-        //Inicializa los objetos necesarios para el manejo del pedido y la carta 
+        // Inicializa los objetos necesarios para el manejo del pedido y la carta 
         private void InicializarDatos()
         {
             pedido = new Pedido();
             carta = new Carta();
-            carta.CargarCarta(pedido);
+            try
+            {
+                carta.CargarCarta(pedido);
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText("error_log.txt", $"{DateTime.Now}: {ex}\n");
+                MessageBox.Show($"Error: {ex.Message}. Revisa error_log.txt", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
-        //Actualiza la lista de 'items' según la categoría seleccionada.
+        // Actualiza la lista de 'items' según la categoría seleccionada.
         private void CategoriaButton_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
             string categoria = button.Tag.ToString();
 
-            switch (categoria)
+            try
             {
-                case "Hamburguesas":
-                    ItemsList.ItemsSource = pedido.Hamburguesas;
-                    Debug.WriteLine($"Hamburguesas cargadas: {pedido.Hamburguesas.Count}");
-                    break;
-                case "Nuggets":
-                    ItemsList.ItemsSource = pedido.Nuggets;
-                    Debug.WriteLine($"Nuggets cargados: {pedido.Nuggets.Count}");
-                    break;
-                case "Patatas":
-                    ItemsList.ItemsSource = pedido.Patatas;
-                    Debug.WriteLine($"Patatas cargadas: {pedido.Patatas.Count}");
-                    break;
-                case "Bebidas":
-                    ItemsList.ItemsSource = pedido.Bebidas;
-                    Debug.WriteLine($"Bebidas cargadas: {pedido.Bebidas.Count}");
-                    break;
-                case "Postres":
-                    ItemsList.ItemsSource = pedido.Postres;
-                    Debug.WriteLine($"Postres cargados: {pedido.Postres.Count}");
-                    break;
+                switch (categoria)
+                {
+                    case "Hamburguesas":
+                        ItemsList.ItemsSource = pedido.Hamburguesas;
+                        Debug.WriteLine($"Hamburguesas cargadas: {pedido.Hamburguesas.Count}");
+                        break;
+                    case "Nuggets":
+                        ItemsList.ItemsSource = pedido.Nuggets;
+                        Debug.WriteLine($"Nuggets cargados: {pedido.Nuggets.Count}");
+                        break;
+                    case "Patatas":
+                        ItemsList.ItemsSource = pedido.Patatas;
+                        Debug.WriteLine($"Patatas cargadas: {pedido.Patatas.Count}");
+                        break;
+                    case "Bebidas":
+                        ItemsList.ItemsSource = pedido.Bebidas;
+                        Debug.WriteLine($"Bebidas cargadas: {pedido.Bebidas.Count}");
+                        break;
+                    case "Postres":
+                        ItemsList.ItemsSource = pedido.Postres;
+                        Debug.WriteLine($"Postres cargados: {pedido.Postres.Count}");
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText("error_log.txt", $"{DateTime.Now}: {ex}\n");
+                MessageBox.Show($"Error: {ex.Message}. Revisa error_log.txt", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-        //maneja la selección de items en la lista de productos, agrega la opción seleccionada al pedido según el tipo de producto
+        // Maneja la selección de items en la lista de productos, agrega la opción seleccionada al pedido según el tipo de producto
+        // En ItemsList_SelectionChanged
         private void ItemsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var selectedItem = ItemsList.SelectedItem;
 
-            if (selectedItem is Hamburguesa hamburguesa)
+            try
             {
-                // Agrega la hamburguesa directamente al pedido 
-                pedido.AgregarHamburguesa(hamburguesa);
-            }
-            else if (selectedItem is Patata patata)
-            {
-                // Muestra el diálogo para seleccionar el tamaño de las patatas
-                var tamanoDialog = new SeleccionarTamanoDialog(patata);
-                if (tamanoDialog.ShowDialog() == true)
+                if (selectedItem is Hamburguesa hamburguesa)
                 {
-                    pedido.AgregarPatata(tamanoDialog.PatataSeleccionada);
+                    // Agrega la hamburguesa directamente al pedido 
+                    pedido.AgregarHamburguesa(hamburguesa);
+                }
+                else if (selectedItem is Patata patata)
+                {
+                    // Muestra el diálogo para seleccionar el tamaño de las patatas
+                    var tamanoDialog = new SeleccionarTamanoDialog(patata);
+                    tamanoDialog.ShowDialog(); // Aquí ya no es necesario establecer el Owner
+                    if (tamanoDialog.DialogResult == true)
+                    {
+                        pedido.AgregarPatata(tamanoDialog.PatataSeleccionada);
+                    }
+                }
+                else if (selectedItem is Bebida bebida)
+                {
+                    // Muestra el diálogo para seleccionar el tamaño de la bebida
+                    var tamanoDialog = new SeleccionarTamanoDialog(bebida);
+                    tamanoDialog.ShowDialog();
+                    if (tamanoDialog.DialogResult == true)
+                    {
+                        pedido.AgregarBebida(tamanoDialog.BebidaSeleccionada);
+                    }
+                }
+                else if (selectedItem is Nugget nugget)
+                {
+                    // Muestra el diálogo para seleccionar la cantidad de nuggets
+                    var cantidadDialog = new SeleccionarCantidadDialog(nugget);
+                    cantidadDialog.ShowDialog();
+                    if (cantidadDialog.DialogResult == true)
+                    {
+                        pedido.AgregarNugget(cantidadDialog.NuggetSeleccionado);
+                    }
+                }
+                else if (selectedItem is Postre postre)
+                {
+                    // Agrega el postre directamente al pedido (no necesita tamaño ni cantidad)
+                    pedido.AgregarPostre(postre);
                 }
             }
-            else if (selectedItem is Bebida bebida)
+            catch (Exception ex)
             {
-                // Muestra el diálogo para seleccionar el tamaño de la bebida
-                var tamanoDialog = new SeleccionarTamanoDialog(bebida);
-                if (tamanoDialog.ShowDialog() == true)
-                {
-                    pedido.AgregarBebida(tamanoDialog.BebidaSeleccionada);
-                }
-            }
-            else if (selectedItem is Nugget nugget)
-            {
-                // Muestra el diálogo para seleccionar la cantidad de nuggets
-                var cantidadDialog = new SeleccionarCantidadDialog(nugget);
-                if (cantidadDialog.ShowDialog() == true)
-                {
-                    pedido.AgregarNugget(cantidadDialog.NuggetSeleccionado);
-                }
-            }
-            else if (selectedItem is Postre postre)
-            {
-                // Agrega el postre directamente al pedido (no necesita tamaño ni cantidad)
-                pedido.AgregarPostre(postre);
+                File.AppendAllText("error_log.txt", $"{DateTime.Now}: {ex}\n");
+                MessageBox.Show($"Error: {ex.Message}. Revisa error_log.txt", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             // Actualiza el pedido en la interfaz de usuario
@@ -109,7 +137,8 @@ namespace _20250218_HamVecino_DI_Angel_Torcal
             ItemsList.SelectedItem = null;
         }
 
-        //Actualiza la visualización del pedido en la interfaz, muestra todos los items del pedido y el total.
+
+        // Actualiza la visualización del pedido en la interfaz, muestra todos los items del pedido y el total.
         private void ActualizarPedido()
         {
             PedidoList.Items.Clear();
@@ -149,7 +178,7 @@ namespace _20250218_HamVecino_DI_Angel_Torcal
             TotalTextBlock.Text = $"Total: {total:C}";
         }
 
-        //confirma el pedido actual y lo reinicia
+        // Confirma el pedido actual y lo reinicia
         private void ConfirmarButton_Click(object sender, RoutedEventArgs e)
         {
             double total = pedido.calcularTotal();
@@ -159,11 +188,11 @@ namespace _20250218_HamVecino_DI_Angel_Torcal
             TotalTextBlock.Text = "Total: 0,00 €";
         }
 
-        //cancela el pedido actual sin confirmación
+        // Cancela el pedido actual sin confirmación
         private void BorrarButton_Click(object sender, RoutedEventArgs e)
         {
-            pedido.borrarPedido(); 
-            PedidoList.Items.Clear(); 
+            pedido.borrarPedido();
+            PedidoList.Items.Clear();
             TotalTextBlock.Text = "Total: 0,00 €";
         }
 
@@ -197,7 +226,6 @@ namespace _20250218_HamVecino_DI_Angel_Torcal
         private void CargarPedidoButton_Click(object sender, RoutedEventArgs e)
         {
             var pedidosWindow = new PedidosWindow(pedidosGuardados, this); // Pasa la lista de pedidos y la referencia a MainWindow
-            pedidosWindow.Owner = this; // Establece la ventana principal como propietaria
             pedidosWindow.ShowDialog(); // Muestra la ventana de pedidos guardados
         }
 
@@ -231,7 +259,5 @@ namespace _20250218_HamVecino_DI_Angel_Torcal
             // Actualiza la interfaz de usuario
             ActualizarPedido();
         }
-
     }
-
 }

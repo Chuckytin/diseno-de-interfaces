@@ -15,7 +15,7 @@ namespace _20250218_HamVecino_DI_Angel_Torcal
         //Inicializa el diálogo para indicar el tamaño del item.
         public SeleccionarTamanoDialog(object item)
         {
-            this.Owner = App.Current.MainWindow;
+            this.Owner = App.Current.MainWindow != this ? App.Current.MainWindow : null;
             InitializeComponent();
             _item = item;
             Title = _item is Patata ? "Seleccionar Tamaño de Patatas" : "Seleccionar Tamaño de Bebida";

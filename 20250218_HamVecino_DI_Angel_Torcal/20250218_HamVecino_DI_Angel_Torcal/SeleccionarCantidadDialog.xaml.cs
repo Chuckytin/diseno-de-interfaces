@@ -12,7 +12,8 @@ namespace _20250218_HamVecino_DI_Angel_Torcal
         // Inicializa el diálogo para seleccionar la cantidad de nuggets
         public SeleccionarCantidadDialog(Nugget nugget)
         {
-            this.Owner = App.Current.MainWindow;
+            this.Owner = App.Current.MainWindow != this ? App.Current.MainWindow : null;
+
             InitializeComponent(); // Asegúrate de que este método esté presente
             _nugget = nugget;
         }
