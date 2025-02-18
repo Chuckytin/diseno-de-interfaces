@@ -73,26 +73,26 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(247, 100);
+            tableLayoutPanel1.Size = new Size(247, 117);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // text_age
             // 
-            text_age.Location = new Point(89, 78);
+            text_age.Location = new Point(89, 90);
             text_age.Name = "text_age";
             text_age.Size = new Size(155, 23);
             text_age.TabIndex = 11;
             // 
             // text_address
             // 
-            text_address.Location = new Point(89, 53);
+            text_address.Location = new Point(89, 61);
             text_address.Name = "text_address";
             text_address.Size = new Size(155, 23);
             text_address.TabIndex = 10;
             // 
             // text_name
             // 
-            text_name.Location = new Point(89, 28);
+            text_name.Location = new Point(89, 32);
             text_name.Name = "text_name";
             text_name.Size = new Size(155, 23);
             text_name.TabIndex = 9;
@@ -103,7 +103,7 @@
             lbl_id.AutoSize = true;
             lbl_id.Location = new Point(3, 0);
             lbl_id.Name = "lbl_id";
-            lbl_id.Size = new Size(80, 25);
+            lbl_id.Size = new Size(80, 29);
             lbl_id.TabIndex = 4;
             lbl_id.Text = "Id:";
             // 
@@ -111,9 +111,9 @@
             // 
             lbl_name.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lbl_name.AutoSize = true;
-            lbl_name.Location = new Point(3, 25);
+            lbl_name.Location = new Point(3, 29);
             lbl_name.Name = "lbl_name";
-            lbl_name.Size = new Size(80, 25);
+            lbl_name.Size = new Size(80, 29);
             lbl_name.TabIndex = 5;
             lbl_name.Text = "Nombre:";
             // 
@@ -121,9 +121,9 @@
             // 
             lnl_address.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lnl_address.AutoSize = true;
-            lnl_address.Location = new Point(3, 50);
+            lnl_address.Location = new Point(3, 58);
             lnl_address.Name = "lnl_address";
-            lnl_address.Size = new Size(80, 25);
+            lnl_address.Size = new Size(80, 29);
             lnl_address.TabIndex = 6;
             lnl_address.Text = "Dirección:";
             // 
@@ -131,9 +131,9 @@
             // 
             lbl_age.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lbl_age.AutoSize = true;
-            lbl_age.Location = new Point(3, 75);
+            lbl_age.Location = new Point(3, 87);
             lbl_age.Name = "lbl_age";
-            lbl_age.Size = new Size(80, 25);
+            lbl_age.Size = new Size(80, 30);
             lbl_age.TabIndex = 7;
             lbl_age.Text = "Edad:";
             // 
@@ -170,14 +170,14 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel2.Size = new Size(222, 100);
+            tableLayoutPanel2.Size = new Size(222, 117);
             tableLayoutPanel2.TabIndex = 1;
             // 
             // btn_insert
             // 
             btn_insert.Location = new Point(3, 3);
             btn_insert.Name = "btn_insert";
-            btn_insert.Size = new Size(71, 19);
+            btn_insert.Size = new Size(71, 23);
             btn_insert.TabIndex = 0;
             btn_insert.Text = "Insertar";
             btn_insert.UseVisualStyleBackColor = true;
@@ -185,27 +185,27 @@
             // 
             // btn_get
             // 
-            btn_get.Location = new Point(3, 28);
+            btn_get.Location = new Point(3, 32);
             btn_get.Name = "btn_get";
-            btn_get.Size = new Size(71, 19);
+            btn_get.Size = new Size(71, 23);
             btn_get.TabIndex = 1;
             btn_get.Text = "Recuperar";
             btn_get.UseVisualStyleBackColor = true;
             // 
             // btn_update
             // 
-            btn_update.Location = new Point(3, 53);
+            btn_update.Location = new Point(3, 61);
             btn_update.Name = "btn_update";
-            btn_update.Size = new Size(71, 19);
+            btn_update.Size = new Size(71, 23);
             btn_update.TabIndex = 2;
             btn_update.Text = "Actualizar";
             btn_update.UseVisualStyleBackColor = true;
             // 
             // btn_delete
             // 
-            btn_delete.Location = new Point(3, 78);
+            btn_delete.Location = new Point(3, 90);
             btn_delete.Name = "btn_delete";
-            btn_delete.Size = new Size(71, 19);
+            btn_delete.Size = new Size(71, 24);
             btn_delete.TabIndex = 3;
             btn_delete.Text = "Eliminar";
             btn_delete.UseVisualStyleBackColor = true;
@@ -228,6 +228,7 @@
             btn_visual.TabIndex = 4;
             btn_visual.Text = "Visualizar datos";
             btn_visual.UseVisualStyleBackColor = true;
+            btn_visual.Click += btn_visual_Click;
             // 
             // Form1
             // 

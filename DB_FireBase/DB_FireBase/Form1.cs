@@ -1,3 +1,4 @@
+锘縰sing System.Data;
 using System.Diagnostics;
 using DB_FireBase.Modelo;
 using DB_FireBase.Servicio;
@@ -16,6 +17,8 @@ namespace DB_FireBase
 
         private IFirebaseConfig config;
 
+        DataTable dt = new DataTable();
+
         public Form1()
         {
             InitializeComponent();
@@ -30,7 +33,7 @@ namespace DB_FireBase
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Debug.Print("Prueba de conexi髇 con Firebase");
+            Debug.Print("Prueba de conexi贸n con Firebase");
 
             try
             {
@@ -38,13 +41,21 @@ namespace DB_FireBase
 
                 if (client != null)
                 {
-                    MessageBox.Show("Conexi髇 establecida!");
+                    MessageBox.Show("Conexi贸n establecida!");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error en la conexi髇: {ex.Message}");
+                MessageBox.Show($"Error en la conexi贸n: {ex.Message}");
+                throw;
             }
+
+            dt.Columns.Add("Id");
+            dt.Columns.Add("Name");
+            dt.Columns.Add("Address");
+            dt.Columns.Add("Age");
+
+            dataGridView1.DataSource = dt;
 
         }
 
@@ -52,7 +63,7 @@ namespace DB_FireBase
         {
 
             try
-            { 
+            {
                 /*var data = new Data
                 {
                     Id = text_id.Text,
@@ -103,6 +114,88 @@ namespace DB_FireBase
                 MessageBox.Show($"Error al insertar datos: {ex.Message}");
             }
 
+        }
+
+
+
+        private async Task bringData()
+        {
+            try
+            {
+                dt.Rows.Clear(); // Limpiar la tabla antes de a帽adir nuevos datos
+
+                // Obtener el contador correcto desde "Contador/Node/counter"
+                FirebaseResponse response = await client.GetTaskAsync("Contador/Node");
+
+                if (response.Body == "null" || string.IsNullOrEmpty(response.Body))
+                {
+                    MessageBox.Show("Error: No se encontr贸 el contador.");
+                    return;
+                }
+
+                // Extraer el n煤mero de registros
+                Counter obj1 = response.ResultAs<Counter>();
+
+                if (obj1 == null || string.IsNullOrEmpty(obj1.counter))
+                {
+                    MessageBox.Show("Error: El contador es nulo o inv谩lido.");
+                    return;
+                }
+
+                int cont = Convert.ToInt32(obj1.counter);
+
+                // Recorrer los datos en "Info"
+                for (int i = 1; i <= cont; i++)
+                {
+                    try
+                    {
+                        FirebaseResponse response1 = await client.GetTaskAsync("Info/" + i);
+
+                        
+                        if (response1.Body == "null" || string.IsNullOrEmpty(response1.Body))
+                        {
+                            //MessageBox.Show($"No hay datos para el ID {i}");
+                            continue;
+                        }
+                        
+
+                        // Convertir la respuesta a un objeto Data
+                        Data obj2 = response1.ResultAs<Data>();
+
+                        if (obj2 == null)
+                        {
+                            MessageBox.Show($"Error: Objeto nulo para el ID {i}. Respuesta: {response1.Body}");
+                            continue;
+                        }
+
+                        // Agregar los datos a la tabla
+                        dt.Rows.Add(obj2.Id, obj2.Name, obj2.Address, obj2.Age);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al obtener datos para el ID {i}: {ex.Message}");
+                    }
+                }
+
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("Informaci贸n transferida con 茅xito!");
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron datos.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error cr铆tico: {ex.Message}");
+            }
+        }
+
+
+        private async void btn_visual_Click(object sender, EventArgs e)
+        {
+            await bringData();
         }
     }
 }
