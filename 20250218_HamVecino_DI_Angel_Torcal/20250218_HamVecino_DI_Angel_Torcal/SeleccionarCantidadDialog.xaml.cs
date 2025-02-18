@@ -15,6 +15,7 @@ namespace _20250218_HamVecino_DI_Angel_Torcal
             this.Owner = App.Current.MainWindow != this ? App.Current.MainWindow : null;
 
             InitializeComponent(); // Asegúrate de que este método esté presente
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen; // Centra la ventana
             _nugget = nugget;
         }
 

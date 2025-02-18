@@ -19,7 +19,8 @@ namespace _20250218_HamVecino_DI_Angel_Torcal
             InitializeComponent();
             _item = item;
             Title = _item is Patata ? "Seleccionar Tamaño de Patatas" : "Seleccionar Tamaño de Bebida";
-            
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen; // Centrar la ventana
+
             //selecciona el índice 1 (Mediano)
             TamanoComboBox.SelectedIndex = 1;
         }
