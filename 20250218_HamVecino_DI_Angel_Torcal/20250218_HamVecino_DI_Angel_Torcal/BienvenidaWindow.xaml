@@ -1,0 +1,62 @@
+﻿<Window x:Class="_20250218_HamVecino_DI_Angel_Torcal.BienvenidaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Bienvenida a HamVecino" 
+        Height="400" 
+        Width="600"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen">
+
+    <Border Background="#FFE6E6E6" CornerRadius="10" Padding="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Logo y título -->
+            <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="0,20,0,20">
+                <Border BorderBrush="Black"
+                        BorderThickness="4"
+                        CornerRadius="10"
+                        Width="200"
+                        Height="200"
+                        ClipToBounds="True"
+                        Background="Transparent">    
+                <Image Source="pack://application:,,,/20250218_HamVecino_DI_Angel_Torcal;component/Resources/hamvecino-logo.jpg"
+           Stretch="Uniform"/>
+                </Border>
+                <TextBlock Text="¡Bienvenidos a HamVecino!" 
+                          FontSize="24" 
+                          FontWeight="Bold" 
+                          HorizontalAlignment="Center"
+                          Margin="0,10,0,0"/>
+            </StackPanel>
+
+            <!-- Mensaje de bienvenida -->
+            <TextBlock Grid.Row="1" 
+                      Text="¡Su restaurante de hamburguesas favorito!" 
+                      HorizontalAlignment="Center"
+                      FontSize="16"
+                      Margin="20"/>
+
+            <!-- Animación de carga -->
+            <Grid Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Border Background="#FFE6E6E6" 
+                        Width="200" 
+                        Height="4" 
+                        CornerRadius="2"/>
+                <Border Background="#FF2ecc71" 
+                        Width="0" 
+                        Height="4" 
+                        BorderBrush="#FF000000" 
+                        BorderThickness="1"
+                        CornerRadius="2"
+                        Name="LoadingBar"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

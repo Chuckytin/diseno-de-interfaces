@@ -1,0 +1,15 @@
+﻿<Window x:Class="_20250218_HamVecino_DI_Angel_Torcal.SeleccionarTamanoDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Seleccionar Tamaño" Height="200" Width="300"
+        WindowStartupLocation="CenterOwner">
+    <StackPanel Margin="10">
+        <TextBlock Text="Seleccione el tamaño:" FontSize="16" Margin="0,10"/>
+        <ComboBox x:Name="TamanoComboBox" FontSize="14" Margin="0,10">
+            <ComboBoxItem Content="Pequeño"/>
+            <ComboBoxItem Content="Mediano"/>
+            <ComboBoxItem Content="Grande"/>
+        </ComboBox>
+        <Button Content="Aceptar" Click="AceptarButton_Click" Width="100" HorizontalAlignment="Center" Margin="0,10"/>
+    </StackPanel>
+</Window>
