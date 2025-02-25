@@ -19,6 +19,8 @@ namespace DB_FireBase
 
         DataTable dt = new DataTable();
 
+        Form3 mWin = null;
+
         public Form1()
         {
             InitializeComponent();
@@ -124,7 +126,7 @@ namespace DB_FireBase
             {
                 dt.Rows.Clear(); // Limpiar la tabla antes de añadir nuevos datos
 
-                // Obtener el contador correcto desde "Contador/Node/counter"
+                // Obtiene el contador correcto desde "Contador/Node/counter"
                 FirebaseResponse response = await client.GetTaskAsync("Contador/Node");
 
                 if (response.Body == "null" || string.IsNullOrEmpty(response.Body))
@@ -133,7 +135,7 @@ namespace DB_FireBase
                     return;
                 }
 
-                // Extraer el número de registros
+                // Extrae el número de registros
                 Counter obj1 = response.ResultAs<Counter>();
 
                 if (obj1 == null || string.IsNullOrEmpty(obj1.counter))
@@ -144,22 +146,22 @@ namespace DB_FireBase
 
                 int cont = Convert.ToInt32(obj1.counter);
 
-                // Recorrer los datos en "Info"
+                // Recorre los datos en "Info"
                 for (int i = 1; i <= cont; i++)
                 {
                     try
                     {
                         FirebaseResponse response1 = await client.GetTaskAsync("Info/" + i);
 
-                        
+
                         if (response1.Body == "null" || string.IsNullOrEmpty(response1.Body))
                         {
                             //MessageBox.Show($"No hay datos para el ID {i}");
                             continue;
                         }
-                        
 
-                        // Convertir la respuesta a un objeto Data
+
+                        // Convierte la respuesta a un objeto Data
                         Data obj2 = response1.ResultAs<Data>();
 
                         if (obj2 == null)
@@ -168,7 +170,7 @@ namespace DB_FireBase
                             continue;
                         }
 
-                        // Agregar los datos a la tabla
+                        // Agrega los datos a la tabla
                         dt.Rows.Add(obj2.Id, obj2.Name, obj2.Address, obj2.Age);
                     }
                     catch (Exception ex)
@@ -196,6 +198,75 @@ namespace DB_FireBase
         private async void btn_visual_Click(object sender, EventArgs e)
         {
             await bringData();
+        }
+
+        private async void btn_get_Click(object sender, EventArgs e)
+        {
+
+            FirebaseResponse response = await client.GetTaskAsync(
+                "Info/" + text_id.Text);
+
+            Data obj = response.ResultAs<Data>();
+            text_id.Text = obj.Id;
+            text_name.Text = obj.Name;
+            text_address.Text = obj.Address;
+            text_age.Text = obj.Age;
+
+            MessageBox.Show("Información recuperada con éxito.");
+
+        }
+
+
+
+        private async void btn_update_Click(object sender, EventArgs e)
+        {
+
+            var data = new Data
+            {
+                Id = text_id.Text,
+                Name = text_name.Text,
+                Address = text_address.Text,
+                Age = text_age.Text,
+            };
+
+            FirebaseResponse response = await client.UpdateTaskAsync(
+                "Info/" + text_id.Text, data);
+            Data result = response.ResultAs<Data>();
+
+            MessageBox.Show("Datos actualizados con el ID: " + result.Id);
+
+            btn_update.Enabled = false;
+
+            bringData();
+
+        }
+
+        private async void btn_delete_ClickAsync(object sender, EventArgs e)
+        {
+
+            FirebaseResponse response = await client.DeleteTaskAsync("Info/" + text_id.Text);
+
+            MessageBox.Show("Información del Id " + text_id.Text + " eliminada.");
+
+            //bringData();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            DialogResult dialogResult = MessageBox.Show(
+                "¿Estás seguro que deseas eliminar todo?",
+                "ATENCIÓN!", MessageBoxButtons.YesNo);
+
+
+            //else if (dialogResult == DialogResult.No)
+
+        }
+
+        private void btn_image_Click(object sender, EventArgs e)
+        {
+            mWin.Show();
         }
     }
 }

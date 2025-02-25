@@ -43,8 +43,10 @@
             btn_get = new Button();
             btn_update = new Button();
             btn_delete = new Button();
+            button1 = new Button();
             lbl_inform = new Label();
             btn_visual = new Button();
+            btn_image = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tableLayoutPanel2.SuspendLayout();
@@ -157,20 +159,20 @@
             tableLayoutPanel2.ColumnCount = 2;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 65F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.Controls.Add(btn_insert, 0, 0);
             tableLayoutPanel2.Controls.Add(btn_get, 0, 1);
             tableLayoutPanel2.Controls.Add(btn_update, 0, 2);
             tableLayoutPanel2.Controls.Add(btn_delete, 0, 3);
-            tableLayoutPanel2.Location = new Point(393, 60);
+            tableLayoutPanel2.Controls.Add(button1, 1, 4);
+            tableLayoutPanel2.Location = new Point(393, 22);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 4;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel2.Size = new Size(222, 117);
+            tableLayoutPanel2.RowCount = 5;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel2.Size = new Size(222, 155);
             tableLayoutPanel2.TabIndex = 1;
             // 
             // btn_insert
@@ -185,30 +187,43 @@
             // 
             // btn_get
             // 
-            btn_get.Location = new Point(3, 32);
+            btn_get.Location = new Point(3, 34);
             btn_get.Name = "btn_get";
             btn_get.Size = new Size(71, 23);
             btn_get.TabIndex = 1;
             btn_get.Text = "Recuperar";
             btn_get.UseVisualStyleBackColor = true;
+            btn_get.Click += btn_get_Click;
             // 
             // btn_update
             // 
-            btn_update.Location = new Point(3, 61);
+            btn_update.Location = new Point(3, 65);
             btn_update.Name = "btn_update";
             btn_update.Size = new Size(71, 23);
             btn_update.TabIndex = 2;
             btn_update.Text = "Actualizar";
             btn_update.UseVisualStyleBackColor = true;
+            btn_update.Click += btn_update_Click;
             // 
             // btn_delete
             // 
-            btn_delete.Location = new Point(3, 90);
+            btn_delete.Location = new Point(3, 96);
             btn_delete.Name = "btn_delete";
             btn_delete.Size = new Size(71, 24);
             btn_delete.TabIndex = 3;
             btn_delete.Text = "Eliminar";
             btn_delete.UseVisualStyleBackColor = true;
+            btn_delete.Click += btn_delete_ClickAsync;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(80, 127);
+            button1.Name = "button1";
+            button1.Size = new Size(139, 24);
+            button1.TabIndex = 4;
+            button1.Text = "Eliminar Todo";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // lbl_inform
             // 
@@ -230,11 +245,22 @@
             btn_visual.UseVisualStyleBackColor = true;
             btn_visual.Click += btn_visual_Click;
             // 
+            // btn_image
+            // 
+            btn_image.Location = new Point(512, 443);
+            btn_image.Name = "btn_image";
+            btn_image.Size = new Size(100, 38);
+            btn_image.TabIndex = 13;
+            btn_image.Text = "Gestor";
+            btn_image.UseVisualStyleBackColor = true;
+            btn_image.Click += btn_image_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(667, 450);
+            ClientSize = new Size(667, 493);
+            Controls.Add(btn_image);
             Controls.Add(btn_visual);
             Controls.Add(lbl_inform);
             Controls.Add(tableLayoutPanel2);
@@ -270,5 +296,7 @@
         private Button btn_delete;
         private Label lbl_inform;
         private Button btn_visual;
+        private Button button1;
+        private Button btn_image;
     }
 }
